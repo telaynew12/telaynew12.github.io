@@ -201,7 +201,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(./img/telaynewphoto.jpg);
+	background-image: url(./telaynewphoto.jpg);
 	background-size: 500px;
 	background-position: top center;
 	position: relative;

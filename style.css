@@ -20,8 +20,8 @@ a {
 	justify-content: center;
 }
 img {
-	height: 100%;
-	width: 100%;
+	height: 70%;
+	width: 90%;
 	object-fit: cover;
 }
 p {
@@ -267,81 +267,116 @@ p {
 /* End Hero Section */
 
 /* Services Section */
+/* Services Section */
+/* Services Section Container */
+#services {
+    padding: 100px 50px;
+    background-color: #f9f9f9;
+}
+
 #services .services {
-	flex-direction: column;
-	text-align: center;
-	max-width: 1500px;
-	margin: 0 auto;
-	padding: 100px 0;
+    flex-direction: column;
+    text-align: center;
+    max-width: 2200px;   /* Increased overall section width */
+    margin: 0 auto;
+    padding: 0 50px;     /* Horizontal padding for spacing */
 }
+
+/* Top Section (Title + Paragraph) */
 #services .service-top {
-	max-width: 500px;
-	margin: 0 auto;
+    max-width: 1000px;   /* Increased width for paragraph */
+    margin: 0 auto 50px auto;
+    text-align: center;
 }
+
+#services .service-top p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    color: #555;
+    margin-top: 15px;
+    text-align: justify; /* Makes paragraph readable */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Bottom Section (Cards) */
 #services .service-bottom {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin-top: 50px;
+    display: flex;
+    justify-content: center; /* Center all cards */
+    align-items: flex-start;
+    gap: 40px;               /* Space between cards */
+    flex-wrap: nowrap;       /* Keep cards in one horizontal row */
 }
+
+/* General service card style */
 #services .service-item {
- background-color: #fff;
-  padding: 30px; /* Increased padding for a larger area */
-  margin: 15px; /* Increased margin for spacing */
-  width: 600px; /* Increased width for better readability */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+    background-color: #fff;
+    padding: 25px 20px;
+    min-height: 220px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;        
+    flex: 1 1 500px;      /* Allow card to grow horizontally */
+    max-width: 900px;     /* Limit max width for large screens */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-#services .service-item::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-	opacity: 0.9;
-	z-index: -1;
+
+#services .service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
-#services .service-bottom .icon img {
-	margin-bottom: 20px;
-	border-radius: 50px;
+
+/* Images inside cards */
+#services .service-item .icon img {
+    width: 100%;
+    max-width: 400px;    /* Increased image width */
+    height: auto;
+    margin-bottom: 15px;
 }
+
+/* Card Titles */
 #services .service-item h2 {
-	font-size: 2rem;
-	color: Black;
-	margin-bottom: 10px;
-	text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Card Paragraphs */
+#services .service-item p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Specific wider width for AI & Data Engineer and Web Development cards */
+/* Increase horizontal length of AI and Data Engineer & Web Development cards */
+#services .service-item.ai-data,
+#services .service-item.web-dev {
+    flex: 1 1 700px;     /* Base width is 700px, allows grow/shrink */
+    max-width: 1200px;   /* Maximum width they can expand to */
+    min-width: 500px;    /* Minimum width to avoid too small */
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1200px) {
+    #services .service-bottom {
+        flex-wrap: wrap;      /* Stack cards on smaller screens */
+        gap: 30px;
+    }
+    #services .service-item {
+        flex: 1 1 90%;        /* Cards take almost full width */
+        max-width: none;
+    }
+    #services .service-top {
+        max-width: 90%;       /* Paragraph resizes for smaller screens */
+    }
 }
 
 
-#services  p span {
-	
-  display: block;
-  margin: 10px 0; /* Equal margin for each line */
-  padding: 20px;  /* Equal padding */
-  margin: 20px;   /* Equal margin */
-  color: white;
-  font-size: 16px;
-  line-height: 1.5;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-#services  p:hover {
-  background-color: #333;
-  color: #fff;
-  transform: scale(1.05);  /* Slight zoom effect on hover */
-  cursor: pointer;
-}
-
-#services p:active {
-  transform: scale(0.98);  /* Slight shrink effect on click */
-  color: white;
-}
 
 /* End Services Section */
 
@@ -830,4 +865,22 @@ p {
   border-radius: 5px; /* Optional: Add rounded corners to images */
   /* Increased maximum width */
   height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Icon container */
+.icon {
+    display: flex;              /* Enable flexbox */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+    margin: 0 auto;             /* Center the container itself if needed */
+}
+
+/* Image inside icon */
+.icon img {
+    width: auto;       /* Maintain natural width */
+    height: auto;      /* Maintain natural height */
+    max-width: 300%;   /* Scale down if container is smaller */
+    max-height: 200%;  /* Scale down if container is smaller */
+    display: block;    /* Remove extra bottom space for images */
 }
